@@ -1,0 +1,28 @@
+.demo {
+    background: red;
+    width: 100px;
+}
+.demo:hover {
+    width: 200px;
+}
+.example-enter {
+    width: 100px;
+    opacity: 0.01;
+  }
+  
+  .example-enter.example-enter-active {
+    opacity: 1;
+    width: 200px;
+    background: red;
+    transition: all 1500ms ease-in;
+  }
+  
+  .example-leave {
+    background: red;
+    opacity: 1;
+  }
+  
+  .example-leave.example-leave-active {
+    opacity: 0.01;
+    transition: opacity 5000ms ease-in;
+  }
