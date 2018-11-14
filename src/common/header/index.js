@@ -6,34 +6,33 @@ import { connect } from 'react-redux';
 
 import {actionCreators} from './store'; //这会导入store下的index.js
 
-const getSearchList = (show) => {
-    if (show) {
+const getSearchList = (props) => {
+    const {focused,list,page,totalPage,enterIn,handleMouseEnter,handleMouseLeave,handleRefresh} = props; //结构赋值
+    if (focused || enterIn) {
+        const pageList = [];
+        const newList = list.toJS(); //需要把immutable对象转换成普通对象
+        if (newList.length > 0) {
+            for (let i = (page-1) * 10 ;i<page*10 && i < newList.length;i++) {
+                pageList.push(
+                    (
+                        <SearchItem key={newList[i]}>{newList[i]}</SearchItem>
+                    )
+                )
+            }
+        }
         return (
-            <SearchInfo>
+            <SearchInfo onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <SearchTrending>
                     <SearchTitle>热门搜索</SearchTitle>
-                    <SearchRefresh><i className="iconfont">&#xe622;</i>换一批</SearchRefresh>
+                    {
+                        //需要通过箭头函数传值
+                    }
+                    <SearchRefresh onClick={() => handleRefresh(page,totalPage)}><i className="iconfont">&#xe622;</i>换一批</SearchRefresh>
                 </SearchTrending>
-                <SearchItems>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
-                    <SearchItem>理财</SearchItem>
+                <SearchItems>                   
+                     {
+                        pageList
+                    }                                                                                
                 </SearchItems>
             </SearchInfo>
         )
@@ -60,7 +59,7 @@ const Header = (props)=> {
                         <SearchWrapper className={props.focused ? 'focused':''}>                                
                             <NavSearch  onFocus={props.handleOnInputFocus} onBlur={props.hadnleOnInputBlur}></NavSearch>
                             <i className={props.focused ? 'focused iconfont':'iconfont'}>&#xe605;</i>
-                            {getSearchList(props.focused)}                             
+                            {getSearchList(props)}                             
                         </SearchWrapper>
                         </CSSTransition>
                         
@@ -77,7 +76,11 @@ const Header = (props)=> {
 
 const mapStateToProps = (state) => {
     return {
-        focused :  state.getIn(['header','focused'])//等同于：state.get("header").get("focused")
+        focused :  state.getIn(['header','focused']),//等同于：state.get("header").get("focused")
+        list: state.getIn(['header','list']),
+        enterIn: state.getIn(['header','enterIn']),
+        page: state.getIn(['header','page']),
+        totalPage:state.getIn(['header','totalPage'])
     }
 }
 
@@ -85,10 +88,25 @@ const mapDispatchToProps = (dispatch) => {
     return {
         handleOnInputFocus () {
             dispatch(actionCreators.searchFocusAction());
+            dispatch(actionCreators.getSearchListAction());
         },
         hadnleOnInputBlur() {
             dispatch(actionCreators.searchBlurAction());
+        },
+        handleMouseEnter() {
+            dispatch(actionCreators.mouseEnter());
+        },
+        handleMouseLeave() {
+            dispatch(actionCreators.mouseLeave());
+        },
+        handleRefresh(page,totalPage) {
+            if (page == totalPage) {
+                dispatch(actionCreators.refresh(1));
+            } else {
+                dispatch(actionCreators.refresh(page + 1));
+            }
         }
+        
     }
 }
 
