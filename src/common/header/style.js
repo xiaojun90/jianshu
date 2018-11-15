@@ -135,6 +135,7 @@ export const SearchTitle = styled.a`
 //换一批
 export const SearchRefresh = styled.a`
     float : right;
+    cursor: pointer;
     .iconfont {
         position: inherit;
         padding: 0 3px;

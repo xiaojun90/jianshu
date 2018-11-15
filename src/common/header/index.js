@@ -41,6 +41,7 @@ const getSearchList = (props) => {
     }
 };
 const Header = (props)=> {
+    const {list,focused, handleOnInputFocus,hadnleOnInputBlur} = props;
     return (
         <Fragment>
             <HeaderWrapper>
@@ -52,13 +53,13 @@ const Header = (props)=> {
                         <NavbarItem className="right">登录</NavbarItem>
                         <NavbarItem className="right">Aa</NavbarItem>
                         <CSSTransition
-                            in={props.focused}
+                            in={focused}
                             timeout={1500}
                             classNames="example"
                         >
-                        <SearchWrapper className={props.focused ? 'focused':''}>                                
-                            <NavSearch  onFocus={props.handleOnInputFocus} onBlur={props.hadnleOnInputBlur}></NavSearch>
-                            <i className={props.focused ? 'focused iconfont':'iconfont'}>&#xe605;</i>
+                        <SearchWrapper className={focused ? 'focused':''}>                                
+                            <NavSearch  onFocus={() => handleOnInputFocus(list)} onBlur={hadnleOnInputBlur}></NavSearch>
+                            <i className={focused ? 'focused iconfont':'iconfont'}>&#xe605;</i>
                             {getSearchList(props)}                             
                         </SearchWrapper>
                         </CSSTransition>
@@ -86,9 +87,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleOnInputFocus () {
-            dispatch(actionCreators.searchFocusAction());
-            dispatch(actionCreators.getSearchListAction());
+        handleOnInputFocus (list) {
+            console.info(list);
+            if (list.size === 0) {
+                dispatch(actionCreators.getSearchListAction());
+            }
+            dispatch(actionCreators.searchFocusAction());     
         },
         hadnleOnInputBlur() {
             dispatch(actionCreators.searchBlurAction());
