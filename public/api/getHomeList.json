@@ -100,6 +100,43 @@
                 "imgUrl": "img/board-5.png" 
             }
     
+        ],
+        "authorsList":[
+            {
+                "id": 1,
+                "imgUrl": "//upload.jianshu.io/users/upload_avatars/3627484/eb973bb9-37ba-4d07-acec-850c0a66d1bb.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+                "author":"吉羊玉奕3",
+                "wordNums":"144.4k",
+                "followNums":"26.4k"
+            },
+            {
+                "id": 2,
+                "imgUrl": "//upload.jianshu.io/users/upload_avatars/3627484/eb973bb9-37ba-4d07-acec-850c0a66d1bb.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp", 
+                "author":"吉羊玉奕3",
+                "wordNums":"144.4k",
+                "followNums":"26.4k"
+            },
+            {
+                "id": 3,
+                "imgUrl": "//upload.jianshu.io/users/upload_avatars/3627484/eb973bb9-37ba-4d07-acec-850c0a66d1bb.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp" ,
+                "author":"吉羊玉奕3",
+                "wordNums":"144.4k",
+                "followNums":"26.4k"
+            },
+            {
+                "id": 4,
+                "imgUrl": "//upload.jianshu.io/users/upload_avatars/3627484/eb973bb9-37ba-4d07-acec-850c0a66d1bb.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp" ,
+                "author":"吉羊玉奕3",
+                "wordNums":"144.4k",
+                "followNums":"26.4k"
+                },{
+                "id": 5,
+                "imgUrl": "//upload.jianshu.io/users/upload_avatars/3627484/eb973bb9-37ba-4d07-acec-850c0a66d1bb.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp", 
+                "author":"吉羊玉奕3",
+                "wordNums":"144.4k",
+                "followNums":"26.4k"
+            }
+    
         ]
     }
 }

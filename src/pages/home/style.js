@@ -133,6 +133,11 @@ export const AuthorsWrapper = styled.div`
     font-size: 14px;
     color: #969696;
     overflow: hidden;
+    .authors-header {
+        height: 18px;
+        line-height: 18px;
+        margin-bottom:15px;
+    }
     .title {
         float: left;
     }
@@ -140,10 +145,43 @@ export const AuthorsWrapper = styled.div`
         display: inline-block;
         float: right;
     }
+    
 `
 
 export const AuthorsItem = styled.div`
 
+    margin-bottom: 15px;
+    .item-content {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 225px;
+        .name {
+            padding-top: 5px;
+            margin-right: 60px;
+            font-size: 14px;
+            display: block;
+        }
+        .comment {
+            margin-top: 5px;
+            font-size:12px;
+        }
+    }
+
+    .authors-img {
+        width: 48px;
+        height: 48px;
+        border-radius: 24px;
+        margin-right: 10px;
+        float: left;
+    }
+
+    .follow {
+        float: right;
+        margin-top: 5px;
+        padding: 0;
+        font-size: 13px;
+        color: #42c02e;
+    }
 `
 
 //******推荐作者样式****** */

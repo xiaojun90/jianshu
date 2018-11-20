@@ -3,7 +3,8 @@ import * as constants from './constants'
 const defaultState = fromJS({
     topicList:[],  //专题列表
     "articleList":[],
-    boardList:[]
+    boardList:[],
+    authorsList:[]
 });
 export default (state = defaultState, action) => {  
     switch(action.type) {
@@ -16,6 +17,7 @@ export default (state = defaultState, action) => {
                 "articleList": action.articleList,
                 "topicList":action.topicList,
                 "boardList":action.boardList,
+                "authorsList":action.authorsList
             });
         }
         default : {

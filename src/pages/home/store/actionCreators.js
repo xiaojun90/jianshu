@@ -24,6 +24,7 @@ export const getHomeList = ()=> {
                 articleList:fromJS(resp.data.data.articleList),
                 topicList:fromJS((resp.data.data.topicList)),
                 boardList:fromJS((resp.data.data.boardList)),
+                authorsList:fromJS((resp.data.data.authorsList)),
             };
             dispatch(action);
         });
