@@ -1,6 +1,12 @@
-div {
+div:hover{
     position: absolute;
     top: 0px;
     right: 0px;
     border: 1px solid #ea6f5a;
+    background: #ea6f5a;
+    color: #fff;
+     
+}
+a:hover {
+    
 }

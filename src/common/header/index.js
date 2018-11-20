@@ -5,6 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 
 import {actionCreators} from './store'; //这会导入store下的index.js
+import {Link } from 'react-router-dom';
 
 const getSearchList = (props) => {
     const {focused,list,page,totalPage,enterIn,handleMouseEnter,handleMouseLeave,handleRefresh} = props; //结构赋值
@@ -46,7 +47,10 @@ const Header = (props)=> {
         <Fragment>
             <HeaderWrapper>
                 <HeaderLimit>
-                    <Logo></Logo>
+                    <Link to="/">
+                        <Logo></Logo>
+                    </Link>
+                    
                     <Navbar>
                         <NavbarItem className="left active">首页</NavbarItem>
                         <NavbarItem className="left">下载App</NavbarItem>                       

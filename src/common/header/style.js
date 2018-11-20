@@ -33,9 +33,7 @@ export const HeaderLimit = styled.div`
     position: relative;
 `
 
-export const Logo = styled.a.attrs({
-    href:'/'
-})`
+export const Logo = styled.div`
     position: absolute;
     left: 0;
     top: 0;

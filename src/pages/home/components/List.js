@@ -6,6 +6,7 @@ import React,{Component} from 'react'
 import {ListItem} from '../style'
 import { connect } from 'react-redux';
 import {actionCreators} from '../store';
+import {Link} from 'react-router-dom';
 class List extends Component {
     render() {
         const {list} = this.props;
@@ -15,7 +16,9 @@ class List extends Component {
                     list.map((item)=>(
                         <ListItem key={item.get('id')}>
                             <div className='item-info'>
-                                <h3 className='item-title'>{item.get('title')}</h3>
+                                <Link to="/detail">
+                                    <h3 className='item-title'>{item.get('title')}</h3>
+                                </Link>
                                 <p className='item-desc'>{item.get('desc')}</p>
                                 <div className='item-meta'>
                                     <a className='item-nickname'>{item.get('author')}</a>
