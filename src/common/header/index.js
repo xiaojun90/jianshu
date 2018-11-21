@@ -53,7 +53,9 @@ const Header = (props)=> {
                     <Navbar>
                         <NavbarItem className="left active">首页</NavbarItem>
                         <NavbarItem className="left">下载App</NavbarItem>                       
-                        <NavbarItem className="right">登录</NavbarItem>
+                        <NavbarItem className="right">
+                        <Link to="/login" className="login">登录</Link>
+                        </NavbarItem>
                         <NavbarItem className="right">Aa</NavbarItem>
                         <CSSTransition
                             in={focused}

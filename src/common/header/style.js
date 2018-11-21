@@ -68,6 +68,18 @@ export const NavbarItem = styled.div`
     &.login {
         font-size : 15px;
     }
+    a {
+        text-decoration: none;
+    }
+    a:active {
+        color:#969696;
+    }
+    a:focus {
+        color:#969696;
+    }
+    a:visited {
+        color:#969696;
+    }
 `
 export const SearchWrapper = styled.div`
     
