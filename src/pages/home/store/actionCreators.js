@@ -17,8 +17,7 @@ export const getArticleList = () => {
 
 export const getHomeList = ()=> {
     return (dispatch) => {
-        axios.get('api/getHomeList.json').then((resp) => {
-            console.log(resp.data.data);
+        axios.get('/api/getHomeList.json').then((resp) => {
             const action = {
                 type: constants.GET_HOME_LIST,
                 articleList:fromJS(resp.data.data.articleList),

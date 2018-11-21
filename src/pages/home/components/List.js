@@ -16,14 +16,20 @@ class List extends Component {
                     list.map((item)=>(
                         <ListItem key={item.get('id')}>
                             <div className='item-info'>
-                                <Link to="/detail">
-                                    <h3 className='item-title'>{item.get('title')}</h3>
+                                <Link to={"/detail/" + item.get('id')} className='item-title'>
+                                    {item.get('title')}
                                 </Link>
                                 <p className='item-desc'>{item.get('desc')}</p>
                                 <div className='item-meta'>
-                                    <a className='item-nickname'>{item.get('author')}</a>
-                                    <a className='item-comments'><i className='iconfont'>&#xe601;</i>{item.get('comments')}</a>
-                                    <a className='item-stars'><i className='iconfont'>&#xe607;</i>{item.get('stars')}</a>
+                                    <Link className="item-nickname" to="/">
+                                        {item.get('author')}
+                                    </Link>
+                                    <Link className="item-comments" to="/">
+                                        <i className='iconfont'>&#xe601;</i>{item.get('comments')}
+                                    </Link>
+                                    <Link className="item-stars" to="/">
+                                        <i className='iconfont'>&#xe607;</i>{item.get('stars')}
+                                    </Link>
                                 </div>
                             </div>
                             <img className = 'item-img' src={item.get('imgUrl')}></img>             

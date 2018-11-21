@@ -12,7 +12,6 @@ export default (state = defaultState, action) => {
             return state.set("articleList",action.data);
         }
         case constants.GET_HOME_LIST : {
-            console.log(action.data);
             return state.merge({
                 "articleList": action.articleList,
                 "topicList":action.topicList,

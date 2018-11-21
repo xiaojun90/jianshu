@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 class Authors extends Component {
     render() {
         const {list} = this.props;
-        console.log(list);
         return (
             <AuthorsWrapper>
                 <div className='authors-header'>

@@ -85,6 +85,10 @@ export const ListItem = styled.div`
         line-height: 1.5;
         color: #969696;
         margin-bottom: 4px;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration:underline;
     }
     .item-desc {
         margin: 0 0 8px;
@@ -100,7 +104,13 @@ export const ListItem = styled.div`
         a {
             margin-right: 10px;
             cursor: pointer;
+            text-decoration:none;
         }
+
+        a:link {color: #b4b4b4; text-decoration:none;} //未访问：蓝色、无下划线 
+        a:active:{color: #b4b4b4; text-decoration:none;} //激活：红色 
+        a:visited {color:#b4b4b4;text-decoration:none;} //已访问：紫色、无下划线 
+        a:hover {color: #b4b4b4; text-decoration:underline;} //鼠标移近：红色、下划线 
         .iconfont {
             font-size:12px;
             margin-right:3px;
