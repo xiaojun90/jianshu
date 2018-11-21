@@ -39,7 +39,7 @@ export const refresh = (page) => ({
 export const getSearchListAction = () => {
     //通过redux-thunk可以在action中返回函数，并且接收dispatch参数
     return (dispatch)=> {
-        axios.get("api/getSearchList.json").then((res)=>{
+        axios.get("/api/getSearchList.json").then((res)=>{
             const data = res.data;
             dispatch(searchList(data.data));
         });

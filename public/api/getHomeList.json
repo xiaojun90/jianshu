@@ -82,22 +82,22 @@
         "boardList":[
             {
                 "id": 1,
-                "imgUrl": "img/board-1.png" 
+                "imgUrl": "/img/board-1.png" 
             },
             {
                 "id": 2,
-                "imgUrl": "img/board-2.png" 
+                "imgUrl": "/img/board-2.png" 
             },
             {
                 "id": 3,
-                "imgUrl": "img/board-3.png" 
+                "imgUrl": "/img/board-3.png" 
             },
             {
                 "id": 4,
-                "imgUrl": "img/board-4.png" 
+                "imgUrl": "/img/board-4.png" 
             },{
                 "id": 5,
-                "imgUrl": "img/board-5.png" 
+                "imgUrl": "/img/board-5.png" 
             }
     
         ],

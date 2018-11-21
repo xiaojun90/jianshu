@@ -50,7 +50,6 @@ const Header = (props)=> {
                     <Link to="/">
                         <Logo></Logo>
                     </Link>
-                    
                     <Navbar>
                         <NavbarItem className="left active">首页</NavbarItem>
                         <NavbarItem className="left">下载App</NavbarItem>                       

@@ -74,7 +74,6 @@ export const SearchWrapper = styled.div`
     box-sizing: border-box;
     position:relative;
     margin-left: 200px;
-    margin-top:9px;
     width:300px;
     .iconfont {
         position:absolute;
