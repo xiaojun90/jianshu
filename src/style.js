@@ -45,4 +45,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+body {
+	overflow-y: scroll;
+}
+ 
 `

@@ -13,6 +13,6 @@ export const getDetailAction = (id)=> {
             dispatch(getDetail(data.data));
 
         });
-        
+    
     }
 }
