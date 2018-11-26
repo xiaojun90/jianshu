@@ -32,5 +32,29 @@ export const LoginItem = styled.div`
         color: #ea6f5a;
         border-bottom: 2px solid #ea6f5a;
     }
+    &.hover {
+        border-bottom: 2px solid #ea6f5a;
+    }
     
+`
+
+export const LoginForm = styled.div`
+    border-radius: 4px;
+    input {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 0;
+        padding: 4px 12px 4px 35px;
+        border: 1px solid #c8c8c8;
+        background-color: hsla(0,0%,71%,.1);
+        vertical-align: middle;
+        box-sizing: border-box;
+    }
+    .input-user {
+        border-bottom:none;
+        border-radius: 4px 4px 0px 0px;
+    }
+    .input-password {    
+        border-radius: 0 0 4px 4px;    
+    }
 `
