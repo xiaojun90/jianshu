@@ -7,3 +7,8 @@ export const changeRegistHover = (hoverRegist) => {
         hoverRegist
     }
 }
+
+export const changeShowLoginForm = (showLoginForm) =>({
+    type:constants.CHANGE_SHOW_LOGIN_FORM,
+    showLoginForm
+})

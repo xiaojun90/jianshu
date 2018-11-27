@@ -42,7 +42,17 @@ const getSearchList = (props) => {
     }
 };
 const Header = (props)=> {
-    const {list,focused, handleOnInputFocus,hadnleOnInputBlur} = props;
+    const {list,focused, handleOnInputFocus,hadnleOnInputBlur,loginState} = props;
+    let loginBtn = null;
+    if (!loginState) {
+        loginBtn = (
+            <Link to="/login" className="login">登录</Link>
+        )
+    } else {
+        loginBtn = (
+            <Link to="/" className="login">退出</Link>
+        )
+    }
     return (
         <Fragment>
             <HeaderWrapper>
@@ -54,7 +64,9 @@ const Header = (props)=> {
                         <NavbarItem className="left active">首页</NavbarItem>
                         <NavbarItem className="left">下载App</NavbarItem>                       
                         <NavbarItem className="right">
-                        <Link to="/login" className="login">登录</Link>
+                        {
+                            loginBtn
+                        }
                         </NavbarItem>
                         <NavbarItem className="right">Aa</NavbarItem>
                         <CSSTransition
@@ -86,7 +98,8 @@ const mapStateToProps = (state) => {
         list: state.getIn(['header','list']),
         enterIn: state.getIn(['header','enterIn']),
         page: state.getIn(['header','page']),
-        totalPage:state.getIn(['header','totalPage'])
+        totalPage:state.getIn(['header','totalPage']),
+        loginState:state.getIn(['login','loginState'])
     }
 }
 
